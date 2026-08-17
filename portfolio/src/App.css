@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'BaybayinDoctrinaClear';
+    src: url('/src/assets/fonts/BaybayinDoctrinaClear.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ───────────────────────────────────────────
+   NAVBAR
+─────────────────────────────────────────── */
+.navbar {
+    background-color: #0F0F0F;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 12.5rem);
+    max-width: 400px;
+    height: 50px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 1.75rem;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    font-family: DM Sans;
+    font-weight: 600;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: DM Sans;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.navbar-links a:hover {
+    color: #D4AF37;
+}
+
+/* ── Link wrapper that holds icon + text ── */
+.navbar-link-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Icon sits left of the label */
+.navbar-link-icon {
+    display: inline-flex;
+    align-items: center;
+    color: #D4AF37;
+    flex-shrink: 0;
+}
+
+/* Active state — gold tint on the link text too */
+.navbar-link-active span,
+.navbar-link-active a {
+    color: #D4AF37;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        width: calc(100% - 6rem);
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: calc(100% - 3rem);
+        max-width: 360px;
+        height: 45px;
+        margin-top: 1.25rem;
+    }
+
+    .navbar-links {
+        gap: 1.25rem;
+    }
+
+    .navbar-links a,
+    .navbar-link-inner span {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: calc(100% - 2rem);
+        max-width: none;
+        height: 42px;
+        margin-top: 1rem;
+        border-radius: 14px;
+        padding: 0 0.25rem 0 0.25rem;
+    }
+
+    .navbar-links {
+        gap: 0.6rem;
+        padding: 0;
+    }
+
+    .navbar-links a,
+    .navbar-link-inner span {
+        font-size: 0.72rem;
+    }
+
+    /* Hide icons on very small screens to save space */
+    .navbar-link-icon {
+        display: none;
+    }
+
+    .navbar-link-inner {
+        gap: 0;
+    }
+
+    /* Shrink logo on mobile */
+    .navbar-logo-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────── */
+.footer {
+    background-color: #121212;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: #555555;
+    margin-bottom: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-bio {
+    max-width: 400px;
+}
+
+.footer-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer-bio-text {
+    font-size: 0.95rem;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-section-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-list li {
+    margin: 0;
+}
+
+.footer-list a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: DM Sans, Inter;
+    transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+    color: #D4AF37;
+}
+
+/* Button-style footer links */
+.footer-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: DM Sans, Inter;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline;
+}
+
+.footer-link-btn:hover {
+    color: #D4AF37;
+}
+
+/* Links with no page yet */
+.footer-link-muted {
+    cursor: default;
+    opacity: 0.4;
+}
+
+.footer-link-muted:hover {
+    color: #a0a0a0;
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-bio {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-divider {
+        margin-bottom: 2.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .footer-bio {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .footer-bio {
+        grid-column: 1;
+    }
+
+    .footer-divider {
+        margin-bottom: 2rem;
+    }
+
+    .footer-name {
+        font-size: 1.1rem;
+    }
+}

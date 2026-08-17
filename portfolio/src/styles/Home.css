@@ -1,0 +1,763 @@
+/* ───────────────────────────────────────────
+   HERO
+─────────────────────────────────────────── */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 70px;
+    transform: translateY(-60px);
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.tulip-top {
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+    transform: translateX(30px) rotate(-15deg);
+}
+
+.home-title {
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: 400;
+    font-family: 'BaybayinDoctrinaClear';
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    margin: 0;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #8E8E8E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ── Title cross-fade stack ── */
+.home-title-stack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Both layers sit on top of each other */
+.home-title--baybayin,
+.home-title--latin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Baybayin — existing style, default visible */
+.home-title--baybayin {
+    font-family: 'BaybayinDoctrinaClear';
+    display: flex;
+    gap: 0.05em;
+}
+
+/* Latin — DM Sans, hidden by default */
+.home-title--latin {
+    font-family: 'DM Sans', Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Invisible spacer that holds the layout height */
+.home-title-stack::after {
+    content: 'Jay Louis';
+    font-family: 'BaybayinDoctrinaClear';
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    white-space: nowrap;
+    visibility: hidden;
+    pointer-events: none;
+    display: block;
+}
+
+.tulip-bottom {
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+    transform: translateX(-30px) rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+    .home-content {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        transform: translateY(-40px);
+    }
+
+    .home-content {
+        gap: 3rem;
+    }
+
+    .tulip-top,
+    .tulip-bottom {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        transform: translateY(-20px);
+        padding-top: 60px;
+    }
+
+    .home-content {
+        gap: 2rem;
+    }
+
+    .tulip-top,
+    .tulip-bottom {
+        width: 80px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   PROJECT INTRO SECTION
+─────────────────────────────────────────── */
+.project-section {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.project-title {
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+}
+
+.project-title .highlight {
+    color: #D4AF37;
+}
+
+.project-section > div {
+    border-left: 1px solid #555555;
+    padding-left: 3rem;
+    margin-left: 0;
+    margin-top: 2rem;
+}
+
+.project-section p {
+    font-size: 1rem;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0 0 3rem 0;
+}
+
+.project-section h6 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    margin: 0.8rem 0;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+@media (max-width: 1024px) {
+    .project-section {
+        gap: 3rem;
+    }
+
+    .project-section > div {
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-section > div {
+        border-left: none;
+        border-top: 1px solid #555555;
+        padding-left: 0;
+        padding-top: 2rem;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-section > div {
+        padding-top: 1.5rem;
+    }
+
+    .project-section p {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ───────────────────────────────────────────
+   ACADEMIC PROJECTS
+─────────────────────────────────────────── */
+.academic-projects {
+    max-width: 100%;
+}
+
+.projects-label {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+}
+
+.projects-label h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: DM Sans, Inter;
+    color: #D4AF37;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.label-line {
+    flex: 1;
+    height: 1px;
+    background-color: #555555;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.project-card.alternate .project-image {
+    order: -1;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: DM Sans, Inter;
+    font-weight: 500;
+}
+
+.project-name {
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 1rem;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: DM Sans, Inter;
+    color: #D4AF37;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    font-family: DM Sans, Inter;
+    color: #ffffff;
+}
+
+.view-case-study {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: DM Sans, Inter;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    width: fit-content;
+    margin-top: 2rem;
+}
+
+.view-case-study:hover {
+    color: #D4AF37;
+}
+
+.project-image {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.projects-divider {
+    height: 1px;
+    background-color: #555555;
+    margin: 4rem 0;
+}
+
+@media (max-width: 1024px) {
+    .project-card {
+        gap: 2.5rem;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-label {
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-card.alternate .project-image {
+        order: 0;
+    }
+
+    .project-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-divider {
+        margin: 2.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-label {
+        gap: 1rem;
+    }
+
+    .projects-label h3 {
+        font-size: 0.65rem;
+    }
+
+    .project-card {
+        gap: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .tag {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .projects-divider {
+        margin: 2rem 0;
+    }
+}
+
+/* ───────────────────────────────────────────
+   SKILLS CAROUSEL
+─────────────────────────────────────────── */
+.skills-section {
+    padding: 3rem 0;
+    background-color: #121212;
+    overflow: hidden;
+}
+
+.skills-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.skills-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 12s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-family: DM Sans, Inter;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.skill-tag svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 2rem 0;
+    }
+
+    .skill-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 1.5rem 0;
+    }
+
+    .skill-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ───────────────────────────────────────────
+   PERSONAL PROJECTS
+─────────────────────────────────────────── */
+.personal-projects {
+    max-width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.personal-header {
+    margin-bottom: 3rem;
+}
+
+.personal-title {
+    font-size: clamp(1.8rem, 4vw, 5rem);
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    color: #ffffff;
+    margin: 0 0 2rem 0;
+    line-height: 1.3;
+}
+
+.personal-projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.scroll-indicator {
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    font-family: DM Sans, Inter;
+    white-space: nowrap;
+}
+
+.personal-projects-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1rem;
+}
+
+.personal-projects-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.personal-projects-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.personal-projects-scroll::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 2px;
+}
+
+.personal-projects-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+}
+
+.personal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 320px;
+    flex-shrink: 0;
+    padding: 1.75rem;
+    background-color: #1a1a1a;
+    border-radius: 16px;
+}
+
+.personal-card-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #222222;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.personal-card-image.placeholder {
+    background: linear-gradient(135deg, #2a2a2a 0%, #222222 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555555;
+    font-size: 0.85rem;
+}
+
+.personal-card-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.personal-tag {
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.72rem;
+    font-family: DM Sans, Inter;
+    font-weight: 500;
+}
+
+.personal-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    color: #ffffff;
+    margin: 0;
+}
+
+.personal-card-description {
+    font-size: 0.88rem;
+    font-family: DM Sans, Inter;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.personal-card-divider {
+    height: 1px;
+    background-color: #2e2e2e;
+    margin: 0;
+}
+
+.personal-card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-family: DM Sans, Inter;
+    color: #D4AF37;
+}
+
+@media (max-width: 768px) {
+    .personal-projects {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .personal-header {
+        margin-bottom: 2rem;
+    }
+
+    .personal-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .personal-card {
+        width: 280px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .personal-projects {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .personal-card {
+        width: 250px;
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .personal-card-title {
+        font-size: 1rem;
+    }
+
+    .personal-card-description {
+        font-size: 0.82rem;
+    }
+}
+
+/* ── Project image — cursor-following hover effect ── */
+.project-image-link {
+    display: block;
+    text-decoration: none;
+}
+
+.project-image {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    cursor: none;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.project-image:hover img {
+    transform: scale(1.03);
+}
+
+.project-image-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+.project-image-label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #0F0F0F;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: DM Sans, Inter;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* ── Personal card — lift on hover ── */
+.personal-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.3s ease;
+}
+
+.personal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── View case study link — arrow slide ── */
+.view-case-study {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.25s ease, color 0.3s ease;
+}
+
+.view-case-study:hover {
+    gap: 0.7rem;
+    color: #D4AF37;
+}
+
+/* ── Tag pills — subtle glow on hover ── */
+.tag:hover,
+.personal-tag:hover,
+.skill-tag:hover {
+    border-color: #D4AF37;
+    transition: border-color 0.25s ease;
+}
+
+/* ── will-change hints ── */
+.home-title,
+.project-card,
+.personal-card {
+    will-change: transform, opacity;
+}

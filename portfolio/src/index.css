@@ -1,0 +1,36 @@
+
+:root {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+body {
+  margin: 0;
+  padding: 0 6.25rem;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  body {
+    padding: 0 3rem;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  body {
+    padding: 0 1rem;
+  }
+}
